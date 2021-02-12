@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Header from './Header'
 import CardList from './CardList';
 import Card from './Card';
 
@@ -10,28 +11,38 @@ class MainLayout extends React.Component {
     super(props);
     this.data = data;
     this.isFullVideo = true;
+
     this.state = {
-      counter: 0
+      currentItem: this.data[0]
     };
+
+    // this.handleClick = this.handleClick.bind(this)
   }
+
+  // handleClick (item) {
+  //   this.setState({
+  //     currentItem: item
+  //   });
+  // }
 
   render() {
     return (
-      <div className='content'>
-        <div className="mainContent">
+      <>
+        <Header/>
+        <div className='content'>
+          <div className="mainContent">
             <Card
-              chanel={this.data[0].chanel}
-              url={this.data[0].url}
-              name={this.data[0].name}
+              currentItem={this.state.currentItem}
               isFullVideo={this.isFullVideo}
             />
-        </div>
-        <div className="cardList">
+          </div>
+          <div className="cardList">
             <CardList
-            list={this.data}
+              list={this.data}
             />
+          </div>
         </div>
-      </div>
+      </>
     )
   }
 };
