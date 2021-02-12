@@ -1,15 +1,13 @@
 import React  from 'react';
 import Card from './Card';
 
-const CardList = ({ list }) => {
+const CardList = ({ list}) => {
   return (
     <div>
       {list.map((elem) => 
         <Card
           key={elem.id}
-          chanel={elem.chanel}
-          url={elem.url}
-          name={elem.name}
+          currentItem={elem}
         />
       )}
     </div>
