@@ -16,14 +16,21 @@ class MainLayout extends React.Component {
       currentItem: this.data[0]
     };
 
-    // this.handleClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
-  // handleClick (item) {
-  //   this.setState({
-  //     currentItem: item
-  //   });
-  // }
+  getVideoList (arr) {
+    let newArr = arr.slice();
+    let curItem = arr.find((elem) => elem.id === this.state.currentItem.id);
+    newArr.splice(newArr.indexOf(curItem), 1);
+    return newArr;
+  }
+
+  handleClick (item) {
+    this.setState({
+      currentItem: item
+    });
+  }
 
   render() {
     return (
@@ -38,7 +45,8 @@ class MainLayout extends React.Component {
           </div>
           <div className="cardList">
             <CardList
-              list={this.data}
+              list={this.getVideoList(this.data)}
+              handleClick={this.handleClick}
             />
           </div>
         </div>
