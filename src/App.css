@@ -18,11 +18,11 @@
 .content {
   display: flex;
   justify-content: space-between;
-  margin: 50px 20px;
+  margin: 50px;
 }
 
 .mainContent {
-  width: 65%
+  width: 60%
 }
 
 .cardList {
@@ -38,6 +38,12 @@
   line-height: 30px;
   margin: 15px 0;
   color: rgb(45, 5, 78);
+  cursor: pointer;
+}
+
+.cardChanel:focus,
+.cardChanel:hover {
+  opacity: 0.6;
 }
 
 .cardName {
