@@ -13,10 +13,14 @@ class MainLayout extends React.Component {
     this.isFullVideo = true;
 
     this.state = {
-      currentItem: this.data[0]
+      currentItem: this.data[0],
+      like: 0,
+      dislike: 0
     };
 
     this.handleClick = this.handleClick.bind(this)
+    this.handleLikeClick = this.handleLikeClick.bind(this)
+    this.handleDislikeClick = this.handleDislikeClick.bind(this)
   }
 
   getVideoList (arr) {
@@ -28,7 +32,22 @@ class MainLayout extends React.Component {
 
   handleClick (item) {
     this.setState({
+      ...this.state,
       currentItem: item
+    });
+  }
+
+  handleLikeClick(type) {
+    this.setState({
+      ...this.state,
+      like: this.state.like + 1
+    });
+  }
+
+  handleDislikeClick() {
+    this.setState({
+      ...this.state,
+      dislike: this.state.dislike + 1
     });
   }
 
@@ -42,6 +61,18 @@ class MainLayout extends React.Component {
               currentItem={this.state.currentItem}
               isFullVideo={this.isFullVideo}
             />
+            <div className="likes">
+              <span className="buttonLike"
+                onClick={this.handleLikeClick}
+              >
+                <img src='https://www.stickees.com/files/emoticons/emojicons/150-hearts-love-loving.png'/> {this.state.like}
+              </span>
+              <span className="buttonLike"
+                onClick={this.handleDislikeClick}
+              >
+                <img src="https://www.stickees.com/files/emoticons/emojicons/143-flirty-love.png" /> {this.state.dislike}
+              </span>
+            </div>
           </div>
           <div className="cardList">
             <CardList
