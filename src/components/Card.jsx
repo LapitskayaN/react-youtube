@@ -14,17 +14,13 @@ const Card = ({ currentItem, isFullVideo=false, handleClick}) => {
         height= {isFullVideo ?  '500px' : '200px'}
         url={url}
         light={isFullVideo ? false : true}
-        onClick={() => {
+        onClick={() => { 
           handleClick(currentItem);
         }}
       />
       <div className="descrCard">
         <h2 
           className="cardChanel"
-          onClick={() => {
-            handleClick(currentItem);
-
-          }}
         >
           {chanel}
         </h2>
