@@ -3,6 +3,9 @@ import React from 'react';
 import Header from './Header'
 import CardList from './CardList';
 import Card from './Card';
+import SearchFilter from './SearchFilter';
+import { Typography } from "@material-ui/core";
+import Review from './Review'
 
 import data from '../data';
 
@@ -15,12 +18,14 @@ class MainLayout extends React.Component {
     this.state = {
       currentItem: this.data[0],
       like: 0,
-      dislike: 0
+      dislike: 0,
+      seacrhText: '',
     };
 
-    this.handleClick = this.handleClick.bind(this)
-    this.handleLikeClick = this.handleLikeClick.bind(this)
-    this.handleDislikeClick = this.handleDislikeClick.bind(this)
+    this.handleClick = this.handleClick.bind(this);
+    this.handleLikeClick = this.handleLikeClick.bind(this);
+    this.handleDislikeClick = this.handleDislikeClick.bind(this);
+    this.handleSort = this.handleSort.bind(this);
   }
 
   getVideoList (arr) {
@@ -30,17 +35,17 @@ class MainLayout extends React.Component {
     return newArr;
   }
 
+  handleSort (name) {
+    this.setState({
+      ...this.state,
+      seacrhText:name
+    })
+  }
+
   handleClick (item) {
     this.setState({
       ...this.state,
       currentItem: item
-    });
-  }
-
-  handleLikeClick(type) {
-    this.setState({
-      ...this.state,
-      like: this.state.like + 1
     });
   }
 
@@ -51,12 +56,23 @@ class MainLayout extends React.Component {
     });
   }
 
+  handleLikeClick() {
+    this.setState({
+      ...this.state,
+      like: this.state.like + 1
+    });
+  }
+
   render() {
     return (
       <>
         <Header/>
         <div className='content'>
           <div className="mainContent">
+            <SearchFilter
+              handleSort={this.handleSort}
+              pickedMovie={this.pickedMovie}
+            />
             <Card
               currentItem={this.state.currentItem}
               isFullVideo={this.isFullVideo}
@@ -73,12 +89,20 @@ class MainLayout extends React.Component {
                 <img src="https://www.stickees.com/files/emoticons/emojicons/143-flirty-love.png" /> {this.state.dislike}
               </span>
             </div>
+            <Review/>
           </div>
           <div className="cardList">
-            <CardList
-              list={this.getVideoList(this.data)}
-              handleClick={this.handleClick}
-            />
+            { this.getVideoList(this.data).filter((elem) =>{return elem.chanel.includes(this.state.seacrhText)}).length === 0 ? (
+              <Typography variant="subtitle1">
+                По данному запросу нет видео
+              </Typography>
+            ) : (
+              <CardList
+                list={this.getVideoList(this.data).filter((elem) =>{return elem.chanel.includes(this.state.seacrhText)})}
+                handleClick={this.handleClick}
+              />
+            )
+            } 
           </div>
         </div>
       </>
