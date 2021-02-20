@@ -1,11 +1,14 @@
 .App {
   text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header {
-  padding: 40px;
+  padding: 10px;
   background-color: #282c34;
   color: white;
+  
 }
 
 .headerTitle {
@@ -18,25 +21,33 @@
 .content {
   display: flex;
   justify-content: space-between;
-  margin: 50px;
+  margin-top: 20px;
 }
 
 .mainContent {
-  width: 60%
+  width: 70%
+
 }
 
 .cardList {
-  width: 25%;
+  width: 20%;
+
 }
 
 .card {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+  /* display: flex;
+  justify-content: space-between; */
 }
 
+/* .descrCard{
+  width: 35%;
+  font-size: 14px;
+} */
 .cardChanel {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 30px;
-  margin: 15px 0;
+  margin: 1px 0;
   color: rgb(45, 5, 78);
   cursor: pointer;
 }
@@ -48,6 +59,7 @@
 
 .cardName {
   margin: 0;
+  font-size: 14px;
 }
 
 .buttonLike {
@@ -69,7 +81,7 @@
   margin-bottom: 20px;
   display: flex;
   width: 50%;
-  border: 1px solid blue;
+  border: 1px solid rgb(100, 100, 102);
   padding: 0 15px;
 }
 
