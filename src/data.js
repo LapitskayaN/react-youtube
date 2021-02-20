@@ -1,41 +1,43 @@
 const data = [
    {
     id: 1,
-    url: 'https://www.youtube.com/watch?v=hQRPsKzpo34',
-    chanel: 'Владилен Минин',
-    name: 'Урок 1. Введение в React Hooks: useState',
+    url: 'https://www.youtube.com/watch?v=8eYEW4q42y8',
+    chanel: ' Astrix Official',
+    name: 'Astrix @ Universo Paralello 2019-2020 [Full Set]',
   },
   {
     id: 2,
-    url: 'https://www.youtube.com/watch?v=AVpodoajaAc',
-    chanel: 'IT-KAMASUTRA',
-    name: '17.x Уроки React JS 17.x Уроки React JS (инкубатор - теперь и онлайн)',
+    url: 'https://www.youtube.com/watch?v=cnVPm1dGQJc',
+    chanel: 'TSG Music',
+    name: '1https://www.youtube.com/watch?v=cnVPm1dGQJc',
   },
   {
     id: 3,
-    url: 'https://www.youtube.com/watch?v=-mDs48HB3II',
-    chanel: 'IT-KAMASUTRA',
-    name: '16. Уроки React JS (props)',
+    url: 'https://www.youtube.com/watch?v=1ekNqFMkImw',
+    chanel: '   RazNitzanMusic   ',
+    name: 'VOCAL TRANCE 2020 [FULL ALBUM - OUT NOW]',
   },
   {
     id: 4,
-    url: 'https://www.youtube.com/watch?v=2fk-AYxwYKs',
-    chanel: 'Web Developer Blog',
-    name: 'Изучение основ React js в одном видео уроке за 20 минут',
+    url: 'https://www.youtube.com/watch?v=c8ijHgTvv9I',
+    chanel: '    Miracle Music',
+    name: 'Dua Lipa, Coldplay, Martin Garrix & Kygo, The Chainsmokers Style - Feeling Me #76',
   },
   {
     id: 5,
-    url: 'https://www.youtube.com/watch?v=eMH4Xhh_8Z0',
-    chanel: ' #JS Code',
-    name: 'Как получить позицию Junior React.js Developer? Что учить?',
+    url: 'https://www.youtube.com/watch?v=CN7y6FVBdR8',
+    chanel: '     Yanni '   ,
+    name: 'YYanni – FELITSA-LIVE_1080p (From the Master)',
   },
+
   {
     id: 6,
-    url: 'https://www.youtube.com/watch?v=xMVtWohX5VU',
-    chanel: 'ТОП 3 преимущества React | Что даёт React разработчику | Иван Петриченко',
-    name: 'Glo Academy',
+    url: ' https://www.youtube.com/watch?v=dS0fNXgAxkw',
+    chanel: 'TranceForLife',
+    name: 'The 30 Best Trance Music Songs Ever (by Armin van Buuren)',
   }
-  
+ 
+ 
 ];
 
 export default data;

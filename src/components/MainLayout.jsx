@@ -1,13 +1,13 @@
 import React from 'react';
-
 import Header from './Header'
 import CardList from './CardList';
 import Card from './Card';
 import SearchFilter from './SearchFilter';
 import { Typography } from "@material-ui/core";
 import Review from './Review'
-
 import data from '../data';
+
+
 
 class MainLayout extends React.Component {
   constructor(props) {
@@ -77,18 +77,27 @@ class MainLayout extends React.Component {
               currentItem={this.state.currentItem}
               isFullVideo={this.isFullVideo}
             />
+
+
+              {/* -----------------like dislike ----------------------------*/}
             <div className="likes">
               <span className="buttonLike"
                 onClick={this.handleLikeClick}
               >
-                <img src='https://www.stickees.com/files/emoticons/emojicons/150-hearts-love-loving.png'/> {this.state.like}
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoTsU_yabuUlDCzn7CK4k6qlpOwuCNtY7sHA&usqp=CAU"
+                // 'https://static.vecteezy.com/system/resources/thumbnails/000/440/205/small/Basic_Element_15-30__28686_29.jpg'                
+                /> {this.state.like}
               </span>
-              <span className="buttonLike"
+               
+              {/* <span className="buttonLike"
                 onClick={this.handleDislikeClick}
               >
-                <img src="https://www.stickees.com/files/emoticons/emojicons/143-flirty-love.png" /> {this.state.dislike}
-              </span>
+                <img src="https://png.pngtree.com/png-vector/20190420/ourlarge/pngtree-dislike-vector-icon-png-image_964173.jpg" /> { this.state.dislike } 
+              </span> */}
+              
             </div>
+
+                    {/* -----------------Review ----------------------------*/}
             <Review/>
           </div>
           <div className="cardList">
