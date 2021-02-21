@@ -5,9 +5,9 @@ import Card from './Card';
 import SearchFilter from './SearchFilter';
 import { Typography } from "@material-ui/core";
 import Review from './Review';
-import EmptyList from './EmptyList';
-import data from '../data';
 
+import data from '../data';
+import { Button } from '@material-ui/core';
 
 
 class MainLayout extends React.Component {
@@ -86,7 +86,6 @@ class MainLayout extends React.Component {
             <Card
               currentItem={this.state.currentItem}
               isFullVideo={this.isFullVideo}
-
               
             />
 
@@ -113,28 +112,40 @@ class MainLayout extends React.Component {
                   <img src="https://png.pngtree.com/png-vector/20190420/ourlarge/pngtree-dislike-vector-icon-png-image_964173.jpg" /> { this.state.dislike } 
                 </span> */}
                 
-              </div>
-
-                    
+              </div>                  
                
             </div>
           </div>
+                
           <div className="cardList">
-            { this.getVideoList(this.data).filter((elem) =>{return elem.chanel.includes(this.state.seacrhText)}).length === 0 ? 
-            (
-              <EmptyList 
-              showAll={this.showAll} 
-              
-              />
-      
-            ) : (
-              <CardList
-                list={this.getVideoList(this.data).filter((elem) =>{return elem.chanel.includes(this.state.seacrhText)})}
-                handleClick={this.handleClick}
-               
-              />
-            )
-            } 
+            {/* -----------------button Show all----------------------------*/}
+            <div>
+            { this.getVideoList(this.data).filter((elem) =>{return elem.chanel.includes(this.state.seacrhText)}).length < this.getVideoList(this.data).length ? 
+              (
+                <Button variant="contained" color="secondary" 
+              onClick={()=>this.props.showAll()}>
+                Show all movie
+              </Button>      
+              ) :  (null)
+              } 
+            </div>
+            {/* -----------------card list---------------------------*/} 
+            <div>
+              { this.getVideoList(this.data).filter((elem) =>{return elem.chanel.includes(this.state.seacrhText)}).length === 0 ? 
+              (
+                <Typography variant="subtitle1">
+                There is no video
+              </Typography>
+        
+              ) : (
+                <CardList
+                  list={this.getVideoList(this.data).filter((elem) =>{return elem.chanel.includes(this.state.seacrhText)})}
+                  handleClick={this.handleClick}
+                  showAll={this.showAll} 
+                />
+              )
+              } 
+            </div>  
           </div>
         </div>
       </>

@@ -8,16 +8,21 @@ class CardList extends React.Component {
     }
 
   render() {
-      const {list, handleClick} = this.props
+      const {list, handleClick, showAll} = this.props
       return (
-          <div className='cardList'>           
-              {list.map((elem) => 
-                <Card
-                key={elem.id}
-                currentItem={elem}
-                handleClick={handleClick}
-                />
-              )}
+          <div>
+              
+
+            <div className='cardList'>           
+                {list.map((elem) => 
+                  <Card
+                  key={elem.id}
+                  currentItem={elem}
+                  handleClick={handleClick}
+                  />
+                )}
+            </div>
+
           </div>
       )
   }
