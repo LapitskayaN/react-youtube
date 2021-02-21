@@ -123,7 +123,7 @@ class MainLayout extends React.Component {
             { this.getVideoList(this.data).filter((elem) =>{return elem.chanel.includes(this.state.seacrhText)}).length < this.getVideoList(this.data).length ? 
               (
                 <Button variant="contained" color="secondary" 
-              onClick={()=>this.props.showAll()}>
+              onClick={()=>this.showAll()}>
                 Show all movie
               </Button>      
               ) :  (null)
