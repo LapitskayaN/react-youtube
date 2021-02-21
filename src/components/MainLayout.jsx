@@ -1,13 +1,14 @@
 import React from 'react';
-
 import Header from './Header'
 import CardList from './CardList';
 import Card from './Card';
 import SearchFilter from './SearchFilter';
 import { Typography } from "@material-ui/core";
-import Review from './Review'
+import Review from './Review';
 
 import data from '../data';
+import { Button } from '@material-ui/core';
+
 
 class MainLayout extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class MainLayout extends React.Component {
     this.handleLikeClick = this.handleLikeClick.bind(this);
     this.handleDislikeClick = this.handleDislikeClick.bind(this);
     this.handleSort = this.handleSort.bind(this);
+    this.showAll = this.showAll.bind(this);
   }
 
   getVideoList (arr) {
@@ -63,6 +65,14 @@ class MainLayout extends React.Component {
     });
   }
 
+  showAll() {
+    this.setState({
+     seacrhText: ''
+    })
+  }
+
+
+
   render() {
     return (
       <>
@@ -76,33 +86,66 @@ class MainLayout extends React.Component {
             <Card
               currentItem={this.state.currentItem}
               isFullVideo={this.isFullVideo}
+              
             />
-            <div className="likes">
-              <span className="buttonLike"
-                onClick={this.handleLikeClick}
-              >
-                <img src='https://www.stickees.com/files/emoticons/emojicons/150-hearts-love-loving.png'/> {this.state.like}
-              </span>
-              <span className="buttonLike"
-                onClick={this.handleDislikeClick}
-              >
-                <img src="https://www.stickees.com/files/emoticons/emojicons/143-flirty-love.png" /> {this.state.dislike}
-              </span>
+
+            <div className="reviewLikes">
+             {/* -----------------Review ----------------------------*/}
+              <div className="review">
+                  <Review />
+              </div>
+
+            {/* -----------------like dislike ----------------------------*/}
+              <div className="likes">
+              
+                <span className="buttonLike"
+                  onClick={this.handleLikeClick}
+                >
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoTsU_yabuUlDCzn7CK4k6qlpOwuCNtY7sHA&usqp=CAU"
+                  // 'https://static.vecteezy.com/system/resources/thumbnails/000/440/205/small/Basic_Element_15-30__28686_29.jpg'                
+                  /> {this.state.like}
+                </span>
+               
+                {/* <span className="buttonLike"
+                  onClick={this.handleDislikeClick}
+                >
+                  <img src="https://png.pngtree.com/png-vector/20190420/ourlarge/pngtree-dislike-vector-icon-png-image_964173.jpg" /> { this.state.dislike } 
+                </span> */}
+                
+              </div>                  
+               
             </div>
-            <Review/>
           </div>
+                
           <div className="cardList">
-            { this.getVideoList(this.data).filter((elem) =>{return elem.chanel.includes(this.state.seacrhText)}).length === 0 ? (
-              <Typography variant="subtitle1">
-                По данному запросу нет видео
+            {/* -----------------button Show all----------------------------*/}
+            <div>
+            { this.getVideoList(this.data).filter((elem) =>{return elem.chanel.includes(this.state.seacrhText)}).length < this.getVideoList(this.data).length ? 
+              (
+                <Button variant="contained" color="secondary" 
+              onClick={()=>this.showAll()}>
+                Show all movie
+              </Button>      
+              ) :  (null)
+              } 
+            </div>
+            {/* -----------------card list---------------------------*/} 
+            <div>
+              { this.getVideoList(this.data).filter((elem) =>{return elem.chanel.includes(this.state.seacrhText)}).length === 0 ? 
+              (
+                <Typography variant="subtitle1">
+                There is no video
               </Typography>
-            ) : (
-              <CardList
-                list={this.getVideoList(this.data).filter((elem) =>{return elem.chanel.includes(this.state.seacrhText)})}
-                handleClick={this.handleClick}
-              />
-            )
-            } 
+        
+              ) : (
+                <CardList
+                  list={this.getVideoList(this.data).filter((elem) =>{return elem.chanel.includes(this.state.seacrhText)})}
+                  handleClick={this.handleClick}
+                  showAll={this.showAll} 
+                />
+              )
+              } 
+            </div>  
           </div>
         </div>
       </>

@@ -6,7 +6,8 @@
 
 .header {
   padding: 10px;
-  background-color: #282c34;
+  background-image: url(https://cdn.pixabay.com/photo/2017/03/25/17/55/color-2174045__340.png) ;
+  background-size: cover;
   color: white;
   
 }
@@ -25,25 +26,26 @@
 }
 
 .mainContent {
-  width: 70%
+  width: 80%
 
 }
 
 .cardList {
-  width: 20%;
-
+  /* width: 25%; */
+margin: 10px
 }
 
 .card {
   margin-bottom: 20px;
+
   /* display: flex;
   justify-content: space-between; */
 }
 
-/* .descrCard{
-  width: 35%;
+ .descrCard{
+  /* width: 35%; */
   font-size: 14px;
-} */
+} 
 .cardChanel {
   font-size: 20px;
   line-height: 30px;
@@ -62,35 +64,56 @@
   font-size: 14px;
 }
 
+
+
+
+ /* -----------review ------------*/
+.reviewLikes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review {
+margin-top: 10px;
+width: 60%;
+}
+
+.review-field {
+  border: 1px solid rgb(100, 100, 102);
+  width: 100%;
+
+}
+/* -----------likes------------*/
+.likes {
+  display: flex;
+  justify-content: flex-start;
+  width: 20%;
+  margin: 0 auto 10px auto; 
+  color:salmon;
+}
+
+.likes img{
+    width: 80px ;
+  
+}
+
 .buttonLike {
   display: flex;
-  width: 20%;
+  
   font-size: 30px;
   align-items: center;
 
 }
 
-.likes {
-  display: flex;
-  justify-content: space-between;
-  width: 200px ;
-  margin: 0 auto 15px auto;
-}
-
+/* --------------searchBar-------- */
 .searchBar {
   margin-bottom: 20px;
   display: flex;
-  width: 50%;
+  width: 80%;
   border: 1px solid rgb(100, 100, 102);
   padding: 0 15px;
 }
 
 .search-icon {
   margin-right: 15px;
-}
-
-.review-field {
-  border: 1px solid blue;
-  width: 100%;
-
 }
