@@ -12,7 +12,8 @@ class Card extends  Component {
          return (
       <div className='card' >
         <div>
-         <ReactPlayer        
+         <ReactPlayer  
+        controls={true}       
         width='100%'
         height= {isFullVideo ?  '500px' : '100px'}
         url={url}
@@ -26,6 +27,8 @@ class Card extends  Component {
           <h2 className="cardChanel" > {chanel}    </h2>
           <p className="cardName">{name}</p>
         </div>
+
+        
 
       </div>
   );

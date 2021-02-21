@@ -64,26 +64,48 @@ margin: 10px
   font-size: 14px;
 }
 
-.buttonLike {
-  display: flex;
-  width: 20%;
-  font-size: 30px;
-  align-items: center;
 
-}
 
-.likes {
+
+ /* -----------review ------------*/
+.reviewLikes {
   display: flex;
   justify-content: space-between;
-  width: 200px ;
-  margin: 0 auto 15px auto;
+}
+
+.review {
+margin-top: 10px;
+width: 60%;
+}
+
+.review-field {
+  border: 1px solid rgb(100, 100, 102);
+  width: 100%;
+
+}
+/* -----------likes------------*/
+.likes {
+  display: flex;
+  justify-content: flex-start;
+  width: 20%;
+  margin: 0 auto 10px auto; 
   color:salmon;
 }
+
 .likes img{
     width: 80px ;
   
 }
 
+.buttonLike {
+  display: flex;
+  
+  font-size: 30px;
+  align-items: center;
+
+}
+
+/* --------------searchBar-------- */
 .searchBar {
   margin-bottom: 20px;
   display: flex;
@@ -94,10 +116,4 @@ margin: 10px
 
 .search-icon {
   margin-right: 15px;
-}
-
-.review-field {
-  border: 1px solid blue;
-  width: 100%;
-
 }
