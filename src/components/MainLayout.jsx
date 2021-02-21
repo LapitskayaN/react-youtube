@@ -21,6 +21,7 @@ class MainLayout extends React.Component {
       like: 0,
       dislike: 0,
       seacrhText: '',
+      comments: [],
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -71,6 +72,12 @@ class MainLayout extends React.Component {
     })
   }
 
+
+  handleSubmit = (text) => {
+    this.setState({
+      comments: [...this.state.comments, text],
+    });
+  };
 
 
   render() {

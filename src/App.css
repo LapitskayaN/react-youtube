@@ -35,6 +35,7 @@
 margin: 10px
 }
 
+ /* -----------card------------*/
 .card {
   margin-bottom: 20px;
 
@@ -53,18 +54,14 @@ margin: 10px
   color: rgb(45, 5, 78);
   cursor: pointer;
 }
-
 .cardChanel:focus,
 .cardChanel:hover {
   opacity: 0.6;
 }
-
 .cardName {
   margin: 0;
   font-size: 14px;
 }
-
-
 
 
  /* -----------review ------------*/
@@ -107,11 +104,11 @@ width: 60%;
 
 /* --------------searchBar-------- */
 .searchBar {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   display: flex;
-  width: 80%;
+  width: 55%;
   border: 1px solid rgb(100, 100, 102);
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 .search-icon {
